@@ -203,7 +203,7 @@ const CandyMachine = ({ walletAddress }) => {
       Token.createMintToInstruction(
         TOKEN_PROGRAM_ID,
         mint.publicKey,
-        userTokenAccountAddress, // 민팅할 유저가 가진 토큰 계정으로 보내기
+        userTokenAccountAddress, // 민팅할 유저가 가진 associated token account
         walletAddress.publicKey,
         [],
         1,
@@ -371,6 +371,7 @@ const CandyMachine = ({ walletAddress }) => {
     }
     return [];
   };
+
   
   // Create render function
   const renderDropTimer = () => {
